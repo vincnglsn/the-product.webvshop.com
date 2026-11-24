@@ -17,10 +17,13 @@ export async function GET() {
   const price = `${(p.price_cents / 100).toFixed(2)} ${p.currency}`;
   const link = `${SITE.url}`;
   const description = `${p.name} - ${p.subtitle}. Charge rapide 240W, béquille métal invisible 90°, silicone plat ultra-résistant.`;
+  const toAbsolute = (url: string) =>
+    url.startsWith("http") ? url : `https://webvshop.com${url.startsWith("/") ? "" : "/"}${url}`;
 
+  const mainImage = toAbsolute(p.image_url);
   const extraImages = p.images
     .slice(1)
-    .map((img) => `      <g:additional_image_link>${xml(img)}</g:additional_image_link>`)
+    .map((img) => `      <g:additional_image_link>${xml(toAbsolute(img))}</g:additional_image_link>`)
     .join("\n");
 
   const xmlBody = `<?xml version="1.0" encoding="UTF-8"?>
@@ -34,9 +37,8 @@ export async function GET() {
       <title>${xml(p.name)}</title>
       <description>${xml(description)}</description>
       <link>${xml(link)}</link>
-      <g:image_link>${xml(p.image_url)}</g:image_link>
-${extraImages}
-      <g:availability>in_stock</g:availability>
+      <g:image_link>${xml(mainImage)}</g:image_link>
+${extraImages ? extraImages + "\n" : ""}      <g:availability>in_stock</g:availability>
       <g:price>${price}</g:price>
       <g:brand>The Product</g:brand>
       <g:condition>new</g:condition>
