@@ -70,13 +70,13 @@ export function ProductHero() {
 
           {/* Miniatures */}
           {THE_PRODUCT.images.length > 1 && (
-            <div className="grid grid-cols-4 gap-3">
+            <div className="grid grid-cols-3 sm:grid-cols-6 gap-2.5">
               {THE_PRODUCT.images.map((img, idx) => (
                 <button
                   key={idx}
                   type="button"
                   onClick={() => setSelectedImage(img)}
-                  className={`relative aspect-square rounded-2xl overflow-hidden border-2 transition-all ${
+                  className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all ${
                     selectedImage === img
                       ? "border-[#00d2ff] shadow-lg shadow-cyan-500/30 scale-102"
                       : "border-white/10 opacity-70 hover:opacity-100 hover:border-white/30"
@@ -222,6 +222,31 @@ export function ProductHero() {
               {errorMsg}
             </div>
           )}
+
+          {/* Description Riche & Points Forts */}
+          <div className="mb-6 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+            <div className="flex items-center gap-2 text-xs font-bold text-white mb-2">
+              <span className="text-[#00d2ff]">✨</span>
+              <span>Chargez sans contraintes — Conception Haute Performance</span>
+            </div>
+            <p className="text-xs text-gray-300 leading-relaxed mb-3">
+              Ne calez plus votre téléphone contre une tasse. Chargez, regardez vos séries et jouez en toute liberté. La puissance de 240W vous permet de rester toujours en énergie : jusqu&apos;à 85% de batterie en seulement 25 minutes. Profitez de votre temps sans aucun nœud.
+            </p>
+            <div className="grid grid-cols-2 gap-2 text-[11px] text-gray-400">
+              <div className="flex items-center gap-1.5">
+                <span className="text-[#00d2ff]">✓</span> 240W Puce E-Marker PD 3.1
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[#00d2ff]">✓</span> Béquille invisible 90°
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[#00d2ff]">✓</span> Silicone plat anti-nœud
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[#00d2ff]">✓</span> Connecteur coudé ergonomique
+              </div>
+            </div>
+          </div>
 
           {/* Bouton de Commande Directe Stripe */}
           <button
