@@ -54,7 +54,12 @@ export const THE_PRODUCT: Product = {
   in_stock: true,
   image_url: "/the-product/images/the-product-01.jpg",
   images: [
-    "/the-product/images/the-product-01.jpg"
+    "/the-product/images/the-product-01.jpg",
+    "/the-product/images/the-product-02.jpg",
+    "/the-product/images/the-product-03.jpg",
+    "/the-product/images/the-product-04.jpg",
+    "/the-product/images/the-product-05.jpg",
+    "/the-product/images/the-product-06.jpg"
   ],
   video_hook_title: "Ne calez plus jamais votre téléphone contre une tasse de café.",
   highlights: [
