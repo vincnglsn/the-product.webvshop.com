@@ -18,11 +18,11 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: "The Product — Le N°1 des tendances validé pour vous | WebVShop",
-  description: "The Product by WebVShop : Découvrez notre sélection exclusive du N°1 des tendances TikTok & High-Tech testé et approuvé. Câble plat 240W avec support téléphone invisible.",
+  title: "The Product by WebVShop — Le N°1 des tendances validé pour vous",
+  description: "The Product by WebVShop : Découvrez notre sélection exclusive du N°1 des tendances testé et approuvé. Câble plat 240W avec support téléphone invisible.",
   openGraph: {
-    title: "The Product — Le N°1 des tendances validé pour vous",
-    description: "The Product by WebVShop : Câble plat 240W avec support de téléphone escamotable à 90°. La pépite virale du moment.",
+    title: "The Product by WebVShop — Le N°1 des tendances validé pour vous",
+    description: "The Product by WebVShop : Câble plat 240W avec support de téléphone escamotable à 90°. La pépite technologique du moment.",
     url: SITE.url,
     siteName: "The Product by WebVShop",
     locale: "fr_FR",

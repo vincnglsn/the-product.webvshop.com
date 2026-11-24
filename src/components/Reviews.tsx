@@ -7,7 +7,7 @@ export function Reviews() {
       variant: "Noir Titane",
       title: "Indispensable pour regarder des vidéos au lit ou en mangeant !",
       comment:
-        "J'avais vu ce câble sur TikTok sans trop y croire, mais franchement c'est du génie. Le support en métal est ultra solide, mon iPhone 15 Pro Max tient parfaitement droit sans jamais basculer. La charge 240W fonctionne à fond avec mon chargeur Mac. J'ai commandé le pack Duo pour en laisser un au bureau.",
+        "J'avais vu ce câble sur les réseaux sans trop y croire, mais franchement c'est du génie. Le support en métal est ultra solide, mon iPhone 15 Pro Max tient parfaitement droit sans jamais basculer. La charge 240W fonctionne à fond avec mon chargeur Mac. J'ai commandé le pack Duo pour en laisser un au bureau.",
     },
     {
       author: "Camille D.",

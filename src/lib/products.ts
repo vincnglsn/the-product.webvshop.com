@@ -43,8 +43,8 @@ export const THE_PRODUCT: Product = {
   id: "the-product-01",
   slug: "cable-plat-charge-rapide-240w-support-integre",
   name: "Câble Plat Ultra-Rapide 240W & Support Pliable Invisible 2-en-1",
-  subtitle: "The Product #01 • Le câble en silicone blindé avec béquille métal escamotable intégrée.",
-  badge: "🏆 TENDANCE N°1 SUR TIKTOK • PLUS DE 3 400 EXEMPLAIRES VENDUS",
+  subtitle: "The Product by WebVShop • Le N°1 des tendances validé pour vous.",
+  badge: "🏆 LE N°1 DES TENDANCES • PLUS DE 3 400 EXEMPLAIRES VENDUS",
   rating: 4.9,
   reviews_count: 3120,
   sales_count: "3 400+ commandes expédiées ce mois-ci",
@@ -72,7 +72,7 @@ export const THE_PRODUCT: Product = {
     {
       icon: "📐",
       title: "Support Pliable Invisible 90°",
-      desc: "Dépliez la béquille métallique en un geste. Regardez vos séries, vidéos TikTok ou suivez vos recettes les mains libres pendant la charge."
+      desc: "Dépliez la béquille métallique en un geste. Regardez vos séries, vidéos ou suivez vos recettes les mains libres pendant la charge."
     },
     {
       icon: "🛡️",
@@ -127,7 +127,7 @@ export const THE_PRODUCT: Product = {
   ],
   variants: [
     { id: "noir", name: "Noir Titane (Furtif)", color_code: "#1f242d" },
-    { id: "orange", name: "Orange Cyber (Édition TikTok)", color_code: "#ff6b00" },
+    { id: "orange", name: "Orange Cyber (Édition Spéciale)", color_code: "#ff6b00" },
     { id: "blanc", name: "Blanc Pur (Minimaliste)", color_code: "#f0f2f5" }
   ],
   faqs: [

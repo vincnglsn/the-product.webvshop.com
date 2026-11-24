@@ -52,7 +52,7 @@ export function ProductHero() {
             <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-black/80 backdrop-blur-md text-[#00d2ff] border border-cyan-500/40 shadow-lg">
                 <span className="w-2 h-2 rounded-full bg-[#00d2ff] animate-pulse" />
-                VU SUR TIKTOK
+                N°1 DES TENDANCES
               </span>
               <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold bg-pink-500/20 text-pink-300 border border-pink-500/30 backdrop-blur-md">
                 -50% AUJOURD&apos;HUI

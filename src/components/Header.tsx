@@ -4,10 +4,10 @@ import { SITE } from "@/lib/site";
 export function Header() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#07090e]/85 border-b border-white/10 transition-all">
-      {/* Barre d'urgence & promo TikTok */}
+      {/* Barre d'urgence & promo */}
       <div className="bg-gradient-to-r from-[#00d2ff] via-[#e024c3] to-[#ff5670] text-black text-xs sm:text-sm font-extrabold py-1.5 px-4 text-center tracking-wide uppercase flex items-center justify-center gap-2">
         <span className="inline-block w-2 h-2 rounded-full bg-black animate-ping" />
-        <span>🔥 Offre Lancement TikTok Shop : -50% aujourd'hui • Expédition 24/48h</span>
+        <span>🔥 Offre de Lancement Spéciale : -50% aujourd&apos;hui • Expédition 24/48h</span>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
