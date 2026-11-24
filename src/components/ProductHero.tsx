@@ -69,22 +69,24 @@ export function ProductHero() {
           </div>
 
           {/* Miniatures */}
-          <div className="grid grid-cols-4 gap-3">
-            {THE_PRODUCT.images.map((img, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => setSelectedImage(img)}
-                className={`relative aspect-square rounded-2xl overflow-hidden border-2 transition-all ${
-                  selectedImage === img
-                    ? "border-[#00d2ff] shadow-lg shadow-cyan-500/30 scale-102"
-                    : "border-white/10 opacity-70 hover:opacity-100 hover:border-white/30"
-                }`}
-              >
-                <Image src={img} alt={`Aperçu ${idx + 1}`} fill className="object-cover" />
-              </button>
-            ))}
-          </div>
+          {THE_PRODUCT.images.length > 1 && (
+            <div className="grid grid-cols-4 gap-3">
+              {THE_PRODUCT.images.map((img, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setSelectedImage(img)}
+                  className={`relative aspect-square rounded-2xl overflow-hidden border-2 transition-all ${
+                    selectedImage === img
+                      ? "border-[#00d2ff] shadow-lg shadow-cyan-500/30 scale-102"
+                      : "border-white/10 opacity-70 hover:opacity-100 hover:border-white/30"
+                  }`}
+                >
+                  <Image src={img} alt={`Aperçu ${idx + 1}`} fill className="object-cover" />
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Réassurance sous l'image */}
           <div className="grid grid-cols-3 gap-2 sm:gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 text-center mt-2">

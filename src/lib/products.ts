@@ -52,12 +52,9 @@ export const THE_PRODUCT: Product = {
   price_cents: 990,
   compare_price_cents: 1990,
   in_stock: true,
-  image_url: "https://img.kwcdn.com/product/open/b8abf5bc29f241d98d1408e5f781976a-goods.jpeg",
+  image_url: "/the-product/images/the-product-01.jpg",
   images: [
-    "https://img.kwcdn.com/product/open/b8abf5bc29f241d98d1408e5f781976a-goods.jpeg",
-    "https://img.kwcdn.com/product/open/2024-08-16/1723793786016-5cb391e44f8045e998db421d3f524e9d-goods.jpeg",
-    "https://img.kwcdn.com/product/open/2024-08-16/1723793786026-6f81a17961224d089ee2d6349ecddf6d-goods.jpeg",
-    "https://img.kwcdn.com/product/open/2024-08-16/1723793786036-79c298066f1b4a39b360155b41cf4366-goods.jpeg"
+    "/the-product/images/the-product-01.jpg"
   ],
   video_hook_title: "Ne calez plus jamais votre téléphone contre une tasse de café.",
   highlights: [
