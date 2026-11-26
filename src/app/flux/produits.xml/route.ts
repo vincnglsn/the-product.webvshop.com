@@ -1,4 +1,4 @@
-import { THE_PRODUCT, THE_PRODUCT_02 } from "@/lib/products";
+import { THE_PRODUCT, THE_PRODUCT_02, THE_PRODUCT_03 } from "@/lib/products";
 import { SITE } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
@@ -13,7 +13,7 @@ function xml(value: string): string {
 }
 
 export async function GET() {
-  const products = [THE_PRODUCT, THE_PRODUCT_02];
+  const products = [THE_PRODUCT, THE_PRODUCT_02, THE_PRODUCT_03];
   const toAbsolute = (url: string) =>
     url.startsWith("http") ? url : `https://webvshop.com${url.startsWith("/") ? "" : "/"}${url}`;
 

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
-import { THE_PRODUCT, THE_PRODUCT_02 } from "@/lib/products";
+import { THE_PRODUCT, THE_PRODUCT_02, THE_PRODUCT_03, THE_PRODUCTS } from "@/lib/products";
 import { SITE } from "@/lib/site";
 
 export async function POST(request: NextRequest) {
@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Corps de requête invalide" }, { status: 400 });
   }
 
-  const currentProduct = body.productId === "the-product-02" ? THE_PRODUCT_02 : THE_PRODUCT;
+  const currentProduct = THE_PRODUCTS[body.productId || "the-product-01"] || THE_PRODUCT;
   const offerId = body.offerId || "solo";
   const variantId = body.variantId || "noir";
 

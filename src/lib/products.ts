@@ -255,8 +255,120 @@ export const THE_PRODUCT_02: Product = {
   ]
 };
 
+export const THE_PRODUCT_03: Product = {
+  id: "the-product-03",
+  slug: "aerateur-robinet-rotatif-3-modes-anti-eclaboussures",
+  name: "Aérateur & Rallonge de Robinet Rotatif 3 Modes Anti-Éclaboussures",
+  subtitle: "The Product #03 • Accessoires Malins • L'embout rotatif universel économique et puissant.",
+  badge: "⭐ THE PRODUCT #03 • ACCESSOIRES MALINS • TENDANCE TIKTOK",
+  rating: 4.9,
+  reviews_count: 2410,
+  sales_count: "4 200+ exemplaires vendus",
+  currency: "EUR",
+  price_cents: 1290,
+  compare_price_cents: 2990,
+  in_stock: true,
+  image_url: "/the-product/images/the-product-03-main.jpg",
+  images: [
+    "/the-product/images/the-product-03-main.jpg",
+    "/the-product/images/the-product-03-02.jpg",
+    "/the-product/images/the-product-03-03.jpg",
+    "/the-product/images/the-product-03-04.jpg",
+    "/the-product/images/the-product-03-05.jpg",
+    "/the-product/images/the-product-03-06.jpg"
+  ],
+  video_hook_title: "Ne nettoyez plus votre évier avec un verre d'eau et ne subissez plus les éclaboussures.",
+  highlights: [
+    "3 Modes de jet sélectionnables : jet doux moussant, jet puissant dégraissant et pulvérisation large.",
+    "Rotation totale multidirectionnelle : nettoie facilement les 4 recoins de l'évier sans éclabousser.",
+    "Économie d'eau jusqu'à 40% : injection d'air microscopique sans aucune perte de pression.",
+    "Installation universelle 30 secondes : compatible 99% des robinets (mâle 24mm et femelle 22/20mm)."
+  ],
+  features: [
+    {
+      icon: "💧",
+      title: "3 Modes de Débit Adaptés",
+      desc: "Changez de mode par simple rotation : cascade douce pour laver les mains ou le visage, jet concentré pour décoller les résidus de casseroles, et pulvérisation pour rincer les fruits."
+    },
+    {
+      icon: "🔄",
+      title: "Rotation Multidirectionnelle",
+      desc: "Orientez le jet dans n'importe quelle direction pour remplir de grands récipients ou nettoyer les parois de l'évier en un tour de main."
+    },
+    {
+      icon: "🌱",
+      title: "Économie d'Eau & Facture Réduite",
+      desc: "Le système venturi aère l'eau de façon optimale, réduisant la consommation de 30% à 40% tout en augmentant la sensation de pression."
+    },
+    {
+      icon: "🛠️",
+      title: "Montage Express Sans Outil",
+      desc: "Se visse directement à la main sur votre robinet existant. Joints d'étanchéité antifuite et adaptateurs fournis."
+    }
+  ],
+  specs: [
+    { label: "Modes de Jet", value: "3 modes (Mousse doux, Jet puissant concentré, Pluie large)" },
+    { label: "Orientation", value: "Tête rotative multi-angles articulée" },
+    { label: "Matériaux", value: "ABS qualité supérieure & Finition chrome galvanoplastie 9 couches" },
+    { label: "Compatibilité", value: "Universelle (Filetages standards 20 mm, 22 mm et 24 mm)" },
+    { label: "Filtration", value: "Filtre tamis multicouche anti-impuretés et sédiments" },
+    { label: "Entretien", value: "Buses silicone autonettoyantes anti-calcaire" }
+  ],
+  offers: [
+    {
+      id: "solo",
+      name: "1 Embout Robinet Solo",
+      badge: "Offre Découverte",
+      popular: false,
+      quantity: 1,
+      price_cents: 1290,
+      compare_price_cents: 2990,
+      savings_text: "Économisez 17,00 € (-57%)"
+    },
+    {
+      id: "duo",
+      name: "Pack Duo (2 Embouts)",
+      badge: "LE PLUS POPULAIRE (1 Cuisine + 1 Salle de Bain)",
+      popular: true,
+      quantity: 2,
+      price_cents: 1990,
+      compare_price_cents: 5980,
+      savings_text: "Économisez 39,90 € • 9,95 € / unité"
+    },
+    {
+      id: "trio",
+      name: "Pack Famille (3 Embouts)",
+      badge: "MEILLEURE OFFRE GLOBALE",
+      popular: false,
+      quantity: 3,
+      price_cents: 2690,
+      compare_price_cents: 8970,
+      savings_text: "Économisez 62,80 € • 8,96 € / unité"
+    }
+  ],
+  variants: [
+    { id: "chrome", name: "Chrome Brillant Miroir", color_code: "#e2e8f0" },
+    { id: "noir", name: "Noir Mat Élégant", color_code: "#1f242d" }
+  ],
+  faqs: [
+    {
+      q: "Est-ce compatible avec mon robinet ?",
+      a: "Oui, il est conçu avec un pas de vis universel et est fourni avec les joints adaptés pour s'adapter à plus de 99% des robinets de cuisine et salle de bain européens."
+    },
+    {
+      q: "L'installation nécessite-t-elle un plombier ou des outils ?",
+      a: "Aucun outil nécessaire ! Il suffit de dévisser votre ancien aérateur à la main et de visser le nouvel embout rotatif en insérant le joint fourni."
+    },
+    {
+      q: "Est-ce que cela réduit la pression ?",
+      a: "Au contraire, le système d'injection d'air dynamique accélère le débit d'eau tout en réduisant la consommation réelle, ce qui augmente l'efficacité du rinçage."
+    }
+  ]
+};
+
 export const THE_PRODUCTS: Record<string, Product> = {
   "the-product-01": THE_PRODUCT,
   "the-product-02": THE_PRODUCT_02,
+  "the-product-03": THE_PRODUCT_03,
 };
 
