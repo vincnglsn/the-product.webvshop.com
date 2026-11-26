@@ -169,7 +169,7 @@ export const THE_PRODUCT_02: Product = {
   reviews_count: 1840,
   sales_count: "2 100+ exemplaires vendus",
   currency: "EUR",
-  price_cents: 1990,
+  price_cents: 1790,
   compare_price_cents: 3990,
   in_stock: true,
   image_url: "/the-product/images/the-product-02-01.jpg",
@@ -220,9 +220,9 @@ export const THE_PRODUCT_02: Product = {
       badge: "Offre Spéciale Lancement",
       popular: false,
       quantity: 1,
-      price_cents: 1990,
+      price_cents: 1790,
       compare_price_cents: 3990,
-      savings_text: "Économisez 20,00 € (-50%)"
+      savings_text: "Économisez 22,00 € (-55%)"
     },
     {
       id: "duo",
@@ -230,9 +230,9 @@ export const THE_PRODUCT_02: Product = {
       badge: "LE PLUS AVANTAGEUX (1 Maison + 1 Atelier)",
       popular: true,
       quantity: 2,
-      price_cents: 3290,
+      price_cents: 2990,
       compare_price_cents: 7980,
-      savings_text: "Économisez 46,90 € • 16,45 € / unité"
+      savings_text: "Économisez 49,90 € • 14,95 € / unité"
     }
   ],
   variants: [
