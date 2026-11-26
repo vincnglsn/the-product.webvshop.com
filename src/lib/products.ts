@@ -158,3 +158,105 @@ export const THE_PRODUCT: Product = {
 export async function getTheProduct(): Promise<Product> {
   return THE_PRODUCT;
 }
+
+export const THE_PRODUCT_02: Product = {
+  id: "the-product-02",
+  slug: "inclinometre-numerique-magnetique-double-laser",
+  name: "Inclinomètre Numérique Magnétique 4 Faces & Double Laser",
+  subtitle: "The Product #02 • Accessoires Malins • L'alignement laser millimétrique de poche.",
+  badge: "⭐ THE PRODUCT #02 • ACCESSOIRES MALINS • NOUVEAUTÉ TIKTOK",
+  rating: 4.9,
+  reviews_count: 1840,
+  sales_count: "2 100+ exemplaires vendus",
+  currency: "EUR",
+  price_cents: 1990,
+  compare_price_cents: 3990,
+  in_stock: true,
+  image_url: "/the-product/images/the-product-02-01.jpg",
+  images: [
+    "/the-product/images/the-product-02-01.jpg"
+  ],
+  video_hook_title: "Ne posez plus jamais une étagère ou un tableau de travers.",
+  highlights: [
+    "Double faisceau laser bilatéral : projette des repères d'alignement horizontaux et verticaux nets jusqu'à 10 mètres.",
+    "Aimants néodyme puissants sur les 4 faces : s'accroche solidement sur tuyaux métalliques, profilés et cadres métalliques.",
+    "Écran LCD rétroéclairé rotatif à 360° : les chiffres pivotent automatiquement pour une lecture toujours à l'endroit.",
+    "Recharge rapide USB Type-C : batterie lithium intégrée, autonomie longue durée pour tous vos chantiers et ateliers."
+  ],
+  features: [
+    {
+      icon: "🎯",
+      title: "Double Laser de Précision",
+      desc: "Lignes laser projetées simultanément des deux côtés pour aligner cadres, étagères, carrelages et menuiseries en un coup d'œil."
+    },
+    {
+      icon: "🧲",
+      title: "Base Magnétique 4 Faces",
+      desc: "4 surfaces aimantées surpuissantes qui adhèrent instantanément à toute surface métallique, libérant totalement vos deux mains."
+    },
+    {
+      icon: "🔄",
+      title: "Affichage Rotatif Automatique",
+      desc: "L'écran numérique s'oriente automatiquement quel que soit l'angle pour éviter les torticolis lors des prises de niveau délicates."
+    },
+    {
+      icon: "🔋",
+      title: "Batterie Lithium USB-C",
+      desc: "Fini les piles bouton coûteuses. Rechargez rapidement sur n'importe quel câble USB-C ou batterie externe."
+    }
+  ],
+  specs: [
+    { label: "Plage de Mesure", value: "4 x 90° (0 à 360°)" },
+    { label: "Précision", value: "±0,2° avec résolution 0,05°" },
+    { label: "Portée Laser", value: "Jusqu'à 10 mètres en intérieur" },
+    { label: "Alimentation", value: "Batterie Lithium rechargeable USB-C (Câble inclus)" },
+    { label: "Fixation", value: "Magnétique néodyme sur 4 côtés" },
+    { label: "Dimensions & Poids", value: "60 x 60 x 30 mm • 120 g (Format ultra-compact poche)" }
+  ],
+  offers: [
+    {
+      id: "solo",
+      name: "1 Inclinomètre Solo",
+      badge: "Offre Spéciale Lancement",
+      popular: false,
+      quantity: 1,
+      price_cents: 1990,
+      compare_price_cents: 3990,
+      savings_text: "Économisez 20,00 € (-50%)"
+    },
+    {
+      id: "duo",
+      name: "Pack Duo (2 Inclinomètres)",
+      badge: "LE PLUS AVANTAGEUX (1 Maison + 1 Atelier)",
+      popular: true,
+      quantity: 2,
+      price_cents: 3290,
+      compare_price_cents: 7980,
+      savings_text: "Économisez 46,90 € • 16,45 € / unité"
+    }
+  ],
+  variants: [
+    { id: "noir", name: "Noir Titane & Laser Rouge", color_code: "#1f242d" },
+    { id: "argent", name: "Gris Sidéral & Laser Vert", color_code: "#71717a" }
+  ],
+  faqs: [
+    {
+      q: "Est-ce simple à utiliser pour un particulier sans notion de bricolage ?",
+      a: "Très simple. Il suffit d'appuyer sur le bouton ON et de poser l'appareil : l'angle s'affiche immédiatement en degrés avec le niveau à bulle digital et les lasers tracent les lignes droites au mur."
+    },
+    {
+      q: "Les aimants tiennent-ils fermement ?",
+      a: "Oui, les 4 faces intègrent des aimants néodyme industriels capables de maintenir l'inclinomètre même sur des tubes verticaux sans glisser."
+    },
+    {
+      q: "Comment s'effectue la recharge ?",
+      a: "Grâce à son port USB Type-C standard, vous pouvez le brancher sur n'importe quel chargeur de smartphone, ordinateur ou powerbank."
+    }
+  ]
+};
+
+export const THE_PRODUCTS: Record<string, Product> = {
+  "the-product-01": THE_PRODUCT,
+  "the-product-02": THE_PRODUCT_02,
+};
+

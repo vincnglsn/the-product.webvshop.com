@@ -2,19 +2,31 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { THE_PRODUCT } from "@/lib/products";
+import { THE_PRODUCT, THE_PRODUCT_02 } from "@/lib/products";
 
 export function ProductHero() {
-  const [selectedImage, setSelectedImage] = useState(THE_PRODUCT.images[0]);
+  const [selectedProductId, setSelectedProductId] = useState<"the-product-01" | "the-product-02">("the-product-02");
+  const product = selectedProductId === "the-product-02" ? THE_PRODUCT_02 : THE_PRODUCT;
+
+  const [selectedImage, setSelectedImage] = useState(THE_PRODUCT_02.images[0]);
   const [selectedOfferId, setSelectedOfferId] = useState("solo");
   const [selectedVariantId, setSelectedVariantId] = useState("noir");
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
+  const switchProduct = (id: "the-product-01" | "the-product-02") => {
+    setSelectedProductId(id);
+    const p = id === "the-product-02" ? THE_PRODUCT_02 : THE_PRODUCT;
+    setSelectedImage(p.images[0]);
+    setSelectedOfferId("solo");
+    setSelectedVariantId("noir");
+    setErrorMsg("");
+  };
+
   const currentOffer =
-    THE_PRODUCT.offers.find((o) => o.id === selectedOfferId) || THE_PRODUCT.offers[0];
+    product.offers.find((o) => o.id === selectedOfferId) || product.offers[0];
   const currentVariant =
-    THE_PRODUCT.variants.find((v) => v.id === selectedVariantId) || THE_PRODUCT.variants[0];
+    product.variants.find((v) => v.id === selectedVariantId) || product.variants[0];
 
   const handleCheckout = async () => {
     setLoading(true);
@@ -24,6 +36,7 @@ export function ProductHero() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          productId: selectedProductId,
           offerId: selectedOfferId,
           variantId: selectedVariantId,
         }),
@@ -44,6 +57,32 @@ export function ProductHero() {
 
   return (
     <section id="commander" className="py-6 sm:py-12 px-4 sm:px-6 max-w-6xl mx-auto">
+      {/* Sélecteur de Produits Stars The Product */}
+      <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
+        <button
+          type="button"
+          onClick={() => switchProduct("the-product-02")}
+          className={`px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-extrabold border transition-all flex items-center gap-2 cursor-pointer ${
+            selectedProductId === "the-product-02"
+              ? "bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-[#e024c3] border-purple-500 shadow-lg shadow-purple-500/25 scale-102"
+              : "bg-white/[0.04] text-gray-400 border-white/10 hover:border-white/25 hover:text-white"
+          }`}
+        >
+          <span>🎯 The Product #02 : Inclinomètre Laser (Accessoires Malins)</span>
+        </button>
+        <button
+          type="button"
+          onClick={() => switchProduct("the-product-01")}
+          className={`px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-extrabold border transition-all flex items-center gap-2 cursor-pointer ${
+            selectedProductId === "the-product-01"
+              ? "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-[#00d2ff] border-cyan-500 shadow-lg shadow-cyan-500/25 scale-102"
+              : "bg-white/[0.04] text-gray-400 border-white/10 hover:border-white/25 hover:text-white"
+          }`}
+        >
+          <span>⚡ The Product #01 : Câble 240W & Support</span>
+        </button>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         {/* Galerie d'images interactive (Col 1-7 sur Desktop) */}
         <div className="lg:col-span-7 flex flex-col gap-4">
@@ -52,7 +91,7 @@ export function ProductHero() {
             <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-black/80 backdrop-blur-md text-[#00d2ff] border border-cyan-500/40 shadow-lg">
                 <span className="w-2 h-2 rounded-full bg-[#00d2ff] animate-pulse" />
-                N°1 DES TENDANCES
+                {selectedProductId === "the-product-02" ? "NOUVEAUTÉ TIKTOK" : "N°1 DES TENDANCES"}
               </span>
               <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold bg-pink-500/20 text-pink-300 border border-pink-500/30 backdrop-blur-md">
                 -50% AUJOURD&apos;HUI
@@ -61,7 +100,7 @@ export function ProductHero() {
 
             <Image
               src={selectedImage}
-              alt={THE_PRODUCT.name}
+              alt={product.name}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
               priority
@@ -69,9 +108,9 @@ export function ProductHero() {
           </div>
 
           {/* Miniatures */}
-          {THE_PRODUCT.images.length > 1 && (
+          {product.images.length > 1 && (
             <div className="grid grid-cols-3 sm:grid-cols-6 gap-2.5">
-              {THE_PRODUCT.images.map((img, idx) => (
+              {product.images.map((img, idx) => (
                 <button
                   key={idx}
                   type="button"
@@ -91,19 +130,31 @@ export function ProductHero() {
           {/* Réassurance sous l'image */}
           <div className="grid grid-cols-3 gap-2 sm:gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 text-center mt-2">
             <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl">⚡</span>
-              <span className="text-[11px] sm:text-xs font-bold text-gray-200 mt-1">240W Réel</span>
-              <span className="text-[10px] text-gray-400">Puce E-Marker PD 3.1</span>
+              <span className="text-xl sm:text-2xl">{selectedProductId === "the-product-02" ? "🎯" : "⚡"}</span>
+              <span className="text-[11px] sm:text-xs font-bold text-gray-200 mt-1">
+                {selectedProductId === "the-product-02" ? "Double Laser" : "240W Réel"}
+              </span>
+              <span className="text-[10px] text-gray-400">
+                {selectedProductId === "the-product-02" ? "Portée 10 mètres" : "Puce E-Marker PD 3.1"}
+              </span>
             </div>
             <div className="flex flex-col items-center border-x border-white/5 px-2">
-              <span className="text-xl sm:text-2xl">📐</span>
-              <span className="text-[11px] sm:text-xs font-bold text-gray-200 mt-1">Support 90°</span>
-              <span className="text-[10px] text-gray-400">Alliage Zinc renforcé</span>
+              <span className="text-xl sm:text-2xl">{selectedProductId === "the-product-02" ? "🧲" : "📐"}</span>
+              <span className="text-[11px] sm:text-xs font-bold text-gray-200 mt-1">
+                {selectedProductId === "the-product-02" ? "4 Faces Aimantées" : "Support 90°"}
+              </span>
+              <span className="text-[10px] text-gray-400">
+                {selectedProductId === "the-product-02" ? "Néodyme ultra-puissant" : "Alliage Zinc renforcé"}
+              </span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-2xl">🛡️</span>
-              <span className="text-[11px] sm:text-xs font-bold text-gray-200 mt-1">Silicone Plat</span>
-              <span className="text-[10px] text-gray-400">+30 000 pliages</span>
+              <span className="text-xl sm:text-2xl">{selectedProductId === "the-product-02" ? "🔋" : "🛡️"}</span>
+              <span className="text-[11px] sm:text-xs font-bold text-gray-200 mt-1">
+                {selectedProductId === "the-product-02" ? "Recharge Type-C" : "Silicone Plat"}
+              </span>
+              <span className="text-[10px] text-gray-400">
+                {selectedProductId === "the-product-02" ? "Batterie Lithium intégrée" : "+30 000 pliages"}
+              </span>
             </div>
           </div>
         </div>
@@ -113,40 +164,40 @@ export function ProductHero() {
           {/* Badge officiel de viralité */}
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-gradient-to-r from-cyan-500/20 to-pink-500/20 text-cyan-300 border border-cyan-500/30">
-              {THE_PRODUCT.badge}
+              {product.badge}
             </span>
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight mb-2">
-            {THE_PRODUCT.name}
+            {product.name}
           </h1>
 
-          <p className="text-sm text-gray-400 mb-4">{THE_PRODUCT.subtitle}</p>
+          <p className="text-sm text-gray-400 mb-4">{product.subtitle}</p>
 
           {/* Étoiles & Preuve sociale */}
           <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10">
             <div className="flex text-amber-400 text-sm">★★★★★</div>
             <span className="text-xs font-bold text-white">4.9/5</span>
-            <span className="text-xs text-gray-400">({THE_PRODUCT.reviews_count} avis vérifiés)</span>
+            <span className="text-xs text-gray-400">({product.reviews_count} avis vérifiés)</span>
             <span className="text-xs text-emerald-400 font-semibold ml-auto flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               En stock
             </span>
           </div>
 
-          {/* Choix de la couleur */}
+          {/* Choix de la variante */}
           <div className="mb-6">
             <div className="flex items-center justify-between text-xs font-bold text-gray-300 mb-2.5">
-              <span>1. Choisissez la couleur :</span>
+              <span>1. Choisissez la variante :</span>
               <span className="text-[#00d2ff]">{currentVariant.name}</span>
             </div>
-            <div className="grid grid-cols-3 gap-2.5">
-              {THE_PRODUCT.variants.map((v) => (
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+              {product.variants.map((v) => (
                 <button
                   key={v.id}
                   type="button"
                   onClick={() => setSelectedVariantId(v.id)}
-                  className={`flex items-center justify-center gap-2 p-3 rounded-xl border text-xs font-bold transition-all ${
+                  className={`flex items-center justify-center gap-2 p-3 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
                     selectedVariantId === v.id
                       ? "border-[#00d2ff] bg-cyan-500/10 text-white shadow-md shadow-cyan-500/20"
                       : "border-white/10 bg-[#111422] text-gray-400 hover:text-white hover:border-white/20"
@@ -156,7 +207,7 @@ export function ProductHero() {
                     className="w-3.5 h-3.5 rounded-full border border-white/20"
                     style={{ backgroundColor: v.color_code }}
                   />
-                  <span>{v.name.split(" ")[0]}</span>
+                  <span className="truncate">{v.name.split(" ")[0]}</span>
                 </button>
               ))}
             </div>
@@ -168,7 +219,7 @@ export function ProductHero() {
               2. Sélectionnez votre formule :
             </div>
             <div className="flex flex-col gap-3">
-              {THE_PRODUCT.offers.map((offer) => {
+              {product.offers.map((offer) => {
                 const isSelected = selectedOfferId === offer.id;
                 return (
                   <label
@@ -223,29 +274,20 @@ export function ProductHero() {
             </div>
           )}
 
-          {/* Description Riche & Points Forts */}
+          {/* Points Forts & Garanties */}
           <div className="mb-6 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
             <div className="flex items-center gap-2 text-xs font-bold text-white mb-2">
               <span className="text-[#00d2ff]">✨</span>
-              <span>Chargez sans contraintes — Conception Haute Performance</span>
+              <span>Points Forts & Innovation Validée</span>
             </div>
-            <p className="text-xs text-gray-300 leading-relaxed mb-3">
-              Ne calez plus votre téléphone contre une tasse. Chargez, regardez vos séries et jouez en toute liberté. La puissance de 240W vous permet de rester toujours en énergie : jusqu&apos;à 85% de batterie en seulement 25 minutes. Profitez de votre temps sans aucun nœud.
-            </p>
-            <div className="grid grid-cols-2 gap-2 text-[11px] text-gray-400">
-              <div className="flex items-center gap-1.5">
-                <span className="text-[#00d2ff]">✓</span> 240W Puce E-Marker PD 3.1
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-[#00d2ff]">✓</span> Béquille invisible 90°
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-[#00d2ff]">✓</span> Silicone plat anti-nœud
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-[#00d2ff]">✓</span> Connecteur coudé ergonomique
-              </div>
-            </div>
+            <ul className="space-y-1.5 text-xs text-gray-300">
+              {product.highlights.map((h, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="text-[#00d2ff] font-bold">✓</span>
+                  <span>{h}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Bouton de Commande Directe Stripe */}
