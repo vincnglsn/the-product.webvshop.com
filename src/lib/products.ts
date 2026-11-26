@@ -49,7 +49,7 @@ export const THE_PRODUCT: Product = {
   reviews_count: 3120,
   sales_count: "3 400+ commandes expédiées ce mois-ci",
   currency: "EUR",
-  price_cents: 990,
+  price_cents: 790,
   compare_price_cents: 1990,
   in_stock: true,
   image_url: "/the-product/images/the-product-01.jpg",
@@ -105,9 +105,9 @@ export const THE_PRODUCT: Product = {
       badge: "Offre Découverte",
       popular: false,
       quantity: 1,
-      price_cents: 990,
+      price_cents: 790,
       compare_price_cents: 1990,
-      savings_text: "Économisez 10,00 €"
+      savings_text: "Économisez 12,00 €"
     },
     {
       id: "duo",
@@ -265,7 +265,7 @@ export const THE_PRODUCT_03: Product = {
   reviews_count: 2410,
   sales_count: "4 200+ exemplaires vendus",
   currency: "EUR",
-  price_cents: 1290,
+  price_cents: 790,
   compare_price_cents: 2990,
   in_stock: true,
   image_url: "/the-product/images/the-product-03-main.jpg",
@@ -321,9 +321,9 @@ export const THE_PRODUCT_03: Product = {
       badge: "Offre Découverte",
       popular: false,
       quantity: 1,
-      price_cents: 1290,
+      price_cents: 790,
       compare_price_cents: 2990,
-      savings_text: "Économisez 17,00 € (-57%)"
+      savings_text: "Économisez 22,00 € (-73%)"
     },
     {
       id: "duo",
