@@ -331,9 +331,9 @@ export const THE_PRODUCT_03: Product = {
       badge: "LE PLUS POPULAIRE (1 Cuisine + 1 Salle de Bain)",
       popular: true,
       quantity: 2,
-      price_cents: 1990,
-      compare_price_cents: 5980,
-      savings_text: "Économisez 39,90 € • 9,95 € / unité"
+      price_cents: 1390,
+      compare_price_cents: 3980,
+      savings_text: "Économisez 25,90 € • 6,95 € / unité"
     },
     {
       id: "trio",
@@ -341,9 +341,9 @@ export const THE_PRODUCT_03: Product = {
       badge: "MEILLEURE OFFRE GLOBALE",
       popular: false,
       quantity: 3,
-      price_cents: 2690,
-      compare_price_cents: 8970,
-      savings_text: "Économisez 62,80 € • 8,96 € / unité"
+      price_cents: 1890,
+      compare_price_cents: 5970,
+      savings_text: "Économisez 40,80 € • 6,30 € / unité"
     }
   ],
   variants: [
